@@ -11,7 +11,9 @@ export default function writeData(data, filename) {
 
     const storagePath = getStoragePath(filename);
 
-    return fs.appendFile(storagePath, data + "\n");
+    // return fs.appendFile(storagePath, data + "\n");
+    return fs.writeFile(storagePath, data);
+
 
 
 }

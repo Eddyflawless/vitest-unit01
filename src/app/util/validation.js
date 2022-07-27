@@ -1,14 +1,14 @@
-export function validateStringNotEmpty(value){
+export function validateStringNotEmpty(value, errorMessage='Invalid input - must not be empty.'){
 
-    if(value.trim().length === 0) {
-        throw new Error('Invalid input - must not be empty.');
+    if(value.trim().length === 0 || !value) {
+        throw new Error(errorMessage);
     }
 
 }
 
-export function validateNumber(number) {
+export function validateNumber(number, errorMessage='Invalid number input.') {
     if(isNaN(number) || typeof number !== 'number'){
-        throw new Error('Invalid number input.');
+        throw new Error(errorMessage);
     }
 }
 

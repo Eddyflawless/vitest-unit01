@@ -17,3 +17,21 @@ export function displayResults(resultText){
 
     output.textContent = resultText;
 }
+
+export function showError(message) {
+
+    const [  errorContainerElement, errorMessageElement ] = getErrorContainers('errors');
+
+    errorMessageElement.textContent = message;
+    errorContainerElement.innerHTML = '';
+    errorContainerElement.appendChild(errorContainerElement);
+}
+
+export function getErrorContainers(elId){
+
+    const errorContainerElement = document.getElementById(elId);
+    const errorMessageElement = document.createElement('p');
+
+    return [ errorContainerElement, errorMessageElement];
+
+}
